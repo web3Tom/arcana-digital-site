@@ -1,13 +1,37 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600;800;900&display=swap");
+//font-family: 'Anton', sans-serif;
+//font-family: 'Poppins', sans-serif;
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+:root {
+  --header-font: "Anton", sans-serif;
+  --body-font: "Poppins", sans-serif;
+  --color-primary: #007cc7;
+  --color-secondary: #12232e;
+  --color-tertiary: #4da8da;
+  --color-grayBlue: #203647;
+  --color-whiteBlue: #e8fbfb;
+
+  --transition: all 400ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
