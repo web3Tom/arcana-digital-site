@@ -1,10 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
+import { FooterTitle } from "./footer.styles";
 
 const Footer = () => {
   return (
     <>
       <div className="footer-container">
-        <h1>Footer</h1>
+        <FooterTitle>Footer</FooterTitle>
         <div className="footer-link-container">
           <Link to="/">HOME</Link>
         </div>
