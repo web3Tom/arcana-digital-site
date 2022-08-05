@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const BaseButton = styled.button`
   font-family: "Poppins";
-  max-width: 185px;
+  max-width: 215px;
   width: auto;
   height: 50px;
   letter-spacing: 0.8px;
   line-height: 50px;
-  padding: 0 25px 0 25px;
+  padding: 0 20px 0 20px;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -17,6 +17,7 @@ export const BaseButton = styled.button`
   border-radius: 70px;
   cursor: pointer;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   -webkit-transition: background 0.3s ease;
   &:hover {

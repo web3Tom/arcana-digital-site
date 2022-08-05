@@ -1,5 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
+// import { useContext } from "react";
 import { ReactComponent as LOGO } from "../../assets/arcana-logo-final_dark-light-blue-min.svg";
+// import { NavContext } from "../../contexts/nav-dropdown.context";
 
 import Button from "../../components/button/button.component";
 import {
@@ -9,9 +11,14 @@ import {
   NavLogoContainer,
   NavLink,
   NavALink,
+  NavPLink,
+  NavDDLink,
+  DropDownWrapper,
+  DropdownContent,
 } from "./navigation.styles";
 
 const Navigation = () => {
+  // const { isDropDownOpen, setIsDropDownOpen } = useContext(NavContext);
   const navigate = useNavigate();
   const signupBtn = (e) => {
     navigate("/");
@@ -24,17 +31,24 @@ const Navigation = () => {
           <LOGO />
         </NavLogoContainer>
         <NavLinksContainer>
-          <NavLink animation1 to="/">
-            Software
-          </NavLink>
+          <DropDownWrapper>
+            <NavPLink animation1>Software</NavPLink>
+            <DropdownContent>
+              <NavDDLink to="messaging">Messaging</NavDDLink>
+              <NavDDLink to="reviews">Reviews</NavDDLink>
+              <NavDDLink to="webchat">Webchat</NavDDLink>
+              <NavDDLink to="payments">Payments</NavDDLink>
+              <NavDDLink to="web-development">Web Development</NavDDLink>
+            </DropdownContent>
+          </DropDownWrapper>
           <NavLink animation1 to="/pricing">
-            Messaging
-          </NavLink>
-          <NavLink animation1 to="/demo">
             Pricing
           </NavLink>
-          <NavLink animation1 to="/why-arcana">
+          <NavLink animation1 to="/demo">
             Demo
+          </NavLink>
+          <NavLink animation1 to="/why-arcana">
+            Why Arcana?
           </NavLink>
         </NavLinksContainer>
         <NavAuthLinksContainer>
@@ -46,9 +60,10 @@ const Navigation = () => {
           >
             Login
           </NavALink>
-          <Button onClick={signupBtn}>Sign up</Button>
+          <Button onClick={signupBtn}>Sign Up</Button>
         </NavAuthLinksContainer>
       </NavigationContainer>
+      {/* {isDropDownOpen && <NavDropDown />} */}
       <Outlet />
     </>
   );

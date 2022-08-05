@@ -122,6 +122,50 @@ export const ALink = styled.a.attrs((props) => ({
     `}
 `;
 
+//Drop-down p
+export const PLink = styled.p.attrs((props) => ({
+  fontfamily: props.font || `var(--body-font)`,
+  fontsize: props.size || "16px",
+  fontweight: props.weight || "400",
+  color: props.color || "black",
+}))`
+  font-family: ${(props) => props.fontfamily};
+  font-size: ${(props) => props.fontsize};
+  font-weight: ${(props) => props.fontweight};
+  color: ${(props) => props.color};
+  text-decoration: none;
+
+  ${(props) =>
+    props.animation1 &&
+    css`
+      position: relative;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 0.05em;
+        background-color: var(--color-primary);
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    `}
+`;
+
 //MEDIA QUERIES
 const size = {
   mobileS: "320px",

@@ -5,12 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
+import { NavContextProvider } from "./contexts/nav-dropdown.context";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <NavContextProvider>
+        <App />
+      </NavContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
