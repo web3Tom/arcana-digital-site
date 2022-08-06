@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600;800;900&family=Roboto:wght@100;400;500;700;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,6 +8,7 @@
 
 :root {
   --header-font: "Anton";
+  --header2-font: "Roboto";
   --body-font: "Poppins", sans-serif;
   --color-primary: #007cc7;
   --color-secondary: #12232e;
@@ -24,7 +25,6 @@ html {
 
 body {
   margin: 0;
-  padding: 20px 40px;
   font-family: "Poppins", "Anton", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

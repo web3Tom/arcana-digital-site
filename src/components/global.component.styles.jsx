@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 // FONT AND HEADLINE STYLES
 export const GlobalH1 = styled.h1.attrs((props) => ({
-  fontfamily: props.font || `var(--header-font)`,
-  fontsize: props.size || "72px",
-  fontweight: props.weight || "900",
+  font: props.font || `var(--header-font)`,
+  size: props.size || "72px",
+  weight: props.weight || "900",
   color: props.color || `var(--color-primary)`,
 }))`
-  font-family: ${(props) => props.fontfamily};
-  font-size: ${(props) => props.fontsize};
-  font-weight: ${(props) => props.fontweight};
+  font-family: ${(props) => props.font};
+  font-size: ${(props) => props.size};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 `;
 
@@ -37,7 +37,7 @@ export const GlobalH2 = styled.h2.attrs((props) => ({
 //React-router Link Component
 export const RouteLink = styled(Link).attrs((props) => ({
   fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "16px",
+  fontsize: props.size || "15px",
   fontweight: props.weight || "400",
   color: props.color || "black",
 }))`
@@ -81,7 +81,7 @@ export const RouteLink = styled(Link).attrs((props) => ({
 //Regular a tag
 export const ALink = styled.a.attrs((props) => ({
   fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "16px",
+  fontsize: props.size || "15px",
   fontweight: props.weight || "400",
   color: props.color || "black",
 }))`
@@ -125,7 +125,7 @@ export const ALink = styled.a.attrs((props) => ({
 //Drop-down p
 export const PLink = styled.p.attrs((props) => ({
   fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "16px",
+  fontsize: props.size || "15px",
   fontweight: props.weight || "400",
   color: props.color || "black",
 }))`

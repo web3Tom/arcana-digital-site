@@ -66,7 +66,7 @@ const revealDD = keyframes`
   }
 
   to {
-    height: 190px;
+    height: 150px;
   }
 `;
 
@@ -74,17 +74,18 @@ const revealDD = keyframes`
 export const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  width: 200px;
+  width: 185px;
   height: 0;
   overflow: hidden;
   transition: height 150ms ease-in-out;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 10px;
-  padding: 15px;
-  top: 40px;
+  gap: 7px;
+  padding: 0px 8px;
+  top: 50px;
   left: -20px;
   z-index: 5;
+  background-color: #ffffff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 `;
 

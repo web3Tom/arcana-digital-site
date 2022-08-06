@@ -3,7 +3,10 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { ReactComponent as LOGO } from "../../assets/arcana-logo-final_dark-light-blue-min.svg";
 // import { NavContext } from "../../contexts/nav-dropdown.context";
 
-import Button from "../../components/button/button.component";
+import Button, {
+  BUTTON_TYPE_CLASS,
+} from "../../components/button/button.component";
+
 import {
   NavigationContainer,
   NavLinksContainer,
@@ -60,7 +63,15 @@ const Navigation = () => {
           >
             Login
           </NavALink>
-          <Button onClick={signupBtn}>Sign Up</Button>
+          <Button
+            buttonType={BUTTON_TYPE_CLASS.base}
+            height="40px"
+            padding="0 18px"
+            fontWeight="600"
+            onClick={signupBtn}
+          >
+            Sign Up
+          </Button>
         </NavAuthLinksContainer>
       </NavigationContainer>
       {/* {isDropDownOpen && <NavDropDown />} */}

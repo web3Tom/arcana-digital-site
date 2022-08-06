@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
-export const BaseButton = styled.button`
+export const BaseButton = styled.button.attrs((props) => ({
+  height: props.height || "45px",
+  width: props.width || "auto",
+  padding: props.padding || "0 20px",
+  fontSize: props.fontSize || "15px",
+  fontWeight: props.fontWeight || "600",
+}))`
   font-family: "Poppins";
   max-width: 215px;
-  width: auto;
-  height: 50px;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  padding: ${(props) => props.padding};
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
   letter-spacing: 0.8px;
   line-height: 50px;
-  padding: 0 20px 0 20px;
-  font-size: 16px;
-  font-weight: 600;
   text-transform: uppercase;
   background-color: #007cc7;
   color: #ffffff;
@@ -19,6 +25,7 @@ export const BaseButton = styled.button`
   display: flex;
   flex-shrink: 0;
   justify-content: center;
+  align-items: center;
   -webkit-transition: background 0.3s ease;
   &:hover {
     background-color: #ffffff;
