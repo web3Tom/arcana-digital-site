@@ -30,7 +30,27 @@ export const GlobalH2 = styled.h2.attrs((props) => ({
 //
 //
 
-// LINK STYLES
+// ~GLOBAL CONTAINER STYLES~
+
+//
+//
+//
+
+//Hero context container
+
+export const HeroContentWrapper = styled.div`
+  display: block;
+  padding-top: 60px;
+  width: 100%;
+`;
+
+//
+//
+//
+
+// ~LINK STYLES~
+
+//
 //
 //
 
