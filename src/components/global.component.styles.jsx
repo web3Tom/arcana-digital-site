@@ -1,5 +1,31 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+import { Sling as Hamburger } from "hamburger-react";
+
+//MEDIA QUERIES
+const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+};
+
+export const device = {
+  mobileS: `screen and (max-width: ${size.mobileS})`,
+  mobileM: `screen and (max-width: ${size.mobileM})`,
+  mobileL: `screen and (max-width: ${size.mobileL})`,
+  tablet: `screen and (max-width: ${size.tablet})`,
+  laptop: `screen and (max-width: ${size.laptop})`,
+  laptopL: `screen and (max-width: ${size.laptopL})`,
+  desktop: `screen and (max-width: ${size.desktop})`,
+  desktopL: `screen and (max-width: ${size.desktop})`,
+};
+//
+
+//
 
 // FONT AND HEADLINE STYLES
 export const GlobalH1 = styled.h1.attrs((props) => ({
@@ -37,7 +63,6 @@ export const GlobalH2 = styled.h2.attrs((props) => ({
 //
 
 //Hero context container
-
 export const HeroContentWrapper = styled.div`
   display: block;
   padding-top: 60px;
@@ -60,6 +85,8 @@ export const RouteLink = styled(Link).attrs((props) => ({
   fontsize: props.size || "15px",
   fontweight: props.weight || "400",
   color: props.color || "black",
+  hoverColor: props.hoverColor || `var(--color-primary)`,
+  hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontfamily};
   font-size: ${(props) => props.fontsize};
@@ -73,7 +100,7 @@ export const RouteLink = styled(Link).attrs((props) => ({
       position: relative;
 
       &:hover {
-        color: var(--color-primary);
+        color: ${(props) => props.hoverColor};
       }
 
       &::after {
@@ -83,7 +110,7 @@ export const RouteLink = styled(Link).attrs((props) => ({
         left: 0;
         width: 100%;
         height: 0.05em;
-        background-color: var(--color-primary);
+        background-color: ${(props) => props.hoverBgColor};
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
         transform: scale(0);
@@ -96,6 +123,10 @@ export const RouteLink = styled(Link).attrs((props) => ({
         transform: scale(1);
       }
     `}
+
+  @media ${device.laptop} {
+    font-size: 12px;
+  }
 `;
 
 //Regular a tag
@@ -104,6 +135,8 @@ export const ALink = styled.a.attrs((props) => ({
   fontsize: props.size || "15px",
   fontweight: props.weight || "400",
   color: props.color || "black",
+  hoverColor: props.hoverColor || `var(--color-primary)`,
+  hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontfamily};
   font-size: ${(props) => props.fontsize};
@@ -117,7 +150,7 @@ export const ALink = styled.a.attrs((props) => ({
       position: relative;
 
       &:hover {
-        color: var(--color-primary);
+        color: ${(props) => props.hoverColor};
       }
 
       &::after {
@@ -127,7 +160,7 @@ export const ALink = styled.a.attrs((props) => ({
         left: 0;
         width: 100%;
         height: 0.05em;
-        background-color: var(--color-primary);
+        background-color: ${(props) => props.hoverBgColor};
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
         transform: scale(0);
@@ -140,6 +173,10 @@ export const ALink = styled.a.attrs((props) => ({
         transform: scale(1);
       }
     `}
+
+  @media ${device.laptop} {
+    font-size: 12px;
+  }
 `;
 
 //Drop-down p
@@ -148,6 +185,8 @@ export const PLink = styled.p.attrs((props) => ({
   fontsize: props.size || "15px",
   fontweight: props.weight || "400",
   color: props.color || "black",
+  hoverColor: props.hoverColor || `var(--color-primary)`,
+  hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontfamily};
   font-size: ${(props) => props.fontsize};
@@ -161,7 +200,7 @@ export const PLink = styled.p.attrs((props) => ({
       position: relative;
 
       &:hover {
-        color: var(--color-primary);
+        color: ${(props) => props.hoverColor};
       }
 
       &::after {
@@ -171,7 +210,7 @@ export const PLink = styled.p.attrs((props) => ({
         left: 0;
         width: 100%;
         height: 0.05em;
-        background-color: var(--color-primary);
+        background-color: ${(props) => props.hoverBgColor};
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
         transform: scale(0);
@@ -184,26 +223,18 @@ export const PLink = styled.p.attrs((props) => ({
         transform: scale(1);
       }
     `}
+
+  @media ${device.laptop} {
+    font-size: 12px;
+  }
 `;
 
-//MEDIA QUERIES
-const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
+//
+//
+//
 
-export const device = {
-  mobileS: `screen and (min-width: ${size.mobileS})`,
-  mobileM: `screen and (min-width: ${size.mobileM})`,
-  mobileL: `screen and (min-width: ${size.mobileL})`,
-  tablet: `screen and (min-width: ${size.tablet})`,
-  laptop: `screen and (min-width: ${size.laptop})`,
-  laptopL: `screen and (min-width: ${size.laptopL})`,
-  desktop: `screen and (min-width: ${size.desktop})`,
-  desktopL: `screen and (min-width: ${size.desktop})`,
-};
+// ~NAVIGATION HAMBURGER~
+
+//
+//
+//

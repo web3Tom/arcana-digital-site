@@ -6,11 +6,15 @@ import {
   NavDDLink,
 } from "./navigation-dd.styles";
 
-const NavigationDD = ({ label }) => {
+const NavigationDD = ({ label, visible }) => {
   return (
     <>
       <DropDownWrapper>
-        <NavPLink animation1>
+        <NavPLink
+          animation1
+          hoverColor={visible ? "white" : null}
+          hoverBgColor={visible ? "white" : null}
+        >
           {label} <DDIcon />
         </NavPLink>
         <DropdownContent>

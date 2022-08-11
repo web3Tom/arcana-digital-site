@@ -1,10 +1,11 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ReactComponent as LOGO } from "../../assets/arcana-logo-final_dark-light-blue-min.svg";
+import { ReactComponent as ALTLOGO } from "../../assets/arcana-logo-final_white.svg";
 // import { NavContext } from "../../contexts/nav-dropdown.context";
 import NavigationDD from "../../components/navigation-dd/navigation-dd.component";
 import { debounce } from "../../utils/helpers.utils";
-
+import { NavHamburger } from "../../components/global.component.styles";
 import Button, {
   BUTTON_TYPE_CLASS,
 } from "../../components/button/button.component";
@@ -20,8 +21,8 @@ import {
 } from "./navigation.styles";
 
 const Navigation = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const []
   const navigate = useNavigate();
   const signupBtn = (e) => {
     navigate("/");
@@ -33,37 +34,47 @@ const Navigation = () => {
     const currentScrollPos = window.pageYOffset;
 
     // set state based on location info (explained in more detail below)
-    setVisible(
-      (prevScrollPos > currentScrollPos &&
-        prevScrollPos - currentScrollPos > 50) ||
-        currentScrollPos < 10
-    );
+    setVisible(currentScrollPos > 10);
 
     // set state to new scroll position
-    setPrevScrollPos(currentScrollPos);
-  }, 100);
+  }, 10);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, visible, handleScroll]);
+  }, [visible, handleScroll]);
 
   return (
     <>
-      <NavStickyWrapper topPos={visible ? "0" : "-60px"}>
+      <NavStickyWrapper visible={visible}>
         <NavigationContainer>
           <NavLogoContainer to="/">
-            <LOGO />
+            {visible ? <ALTLOGO /> : <LOGO />}
           </NavLogoContainer>
           <NavLinksContainer>
-            <NavigationDD label="Products" />
-            <NavLink animation1 to="/pricing">
+            <NavigationDD label="Features" visible={visible} />
+            <NavLink
+              animation1
+              to="/pricing"
+              hoverColor={visible ? "white" : null}
+              hoverBgColor={visible ? "white" : null}
+            >
               Pricing
             </NavLink>
-            <NavLink animation1 to="/demo">
+            <NavLink
+              animation1
+              to="/demo"
+              hoverColor={visible ? "white" : null}
+              hoverBgColor={visible ? "white" : null}
+            >
               Demo
             </NavLink>
-            <NavLink animation1 to="/why-arcana">
+            <NavLink
+              animation1
+              to="/why-arcana"
+              hoverColor={visible ? "white" : null}
+              hoverBgColor={visible ? "white" : null}
+            >
               Why Arcana?
             </NavLink>
           </NavLinksContainer>
@@ -73,6 +84,8 @@ const Navigation = () => {
               href="https://app.arcanadigital.io"
               target="_blank"
               rel="noopener noreferrer"
+              hoverColor={visible ? "white" : null}
+              hoverBgColor={visible ? "white" : null}
             >
               Login
             </NavALink>
@@ -82,13 +95,13 @@ const Navigation = () => {
               padding="0 18px"
               fontWeight="600"
               onClick={signupBtn}
+              borderColHov={visible ? "white" : null}
             >
               Sign Up
             </Button>
           </NavAuthLinksContainer>
         </NavigationContainer>
       </NavStickyWrapper>
-      {/* {isDropDownOpen && <NavDropDown />} */}
       <Outlet />
     </>
   );

@@ -2,26 +2,29 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { RouteLink, ALink } from "../../components/global.component.styles";
 
-export const NavStickyWrapper = styled.div.attrs((props) => ({
-  topPos: props.topPos,
-}))`
+export const NavStickyWrapper = styled.div.attrs(({ visible, ...props }) => (
+  <div {...props} />
+))`
   position: fixed;
-  background-color: white;
+  background-color: ${({ visible }) =>
+    visible ? `var(--color-tertiary)` : `transparent`};
   margin: 0;
   padding: 0;
   left: 0;
   width: 100%;
+  height: ${({ visible }) => (visible ? `60px` : `80px`)};
   display: flex;
   justify-content: center;
-  top: ${(props) => props.topPos};
-  transition: top 0.6s ease-in-out;
+  z-index: 3;
+  top: 0;
+  transition: all 0.1s ease-in-out;
 `;
 
 export const NavigationContainer = styled.div`
   display: flex;
   width: 80vw;
   margin: 0;
-  height: 60px;
+  height: 100%;
   flex-direction: row;
   justify-content: flex-start;
   gap: 40px;
@@ -52,6 +55,10 @@ export const NavLinksContainer = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media {device.laptop} {
+    gap: 30px;
+  }
 `;
 
 export const NavAuthLinksContainer = styled.div`
@@ -62,6 +69,10 @@ export const NavAuthLinksContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   gap: 40px;
+
+  @media {device.laptop} {
+    gap: 25px;
+  }
 `;
 
 export const NavLink = styled(RouteLink)``;

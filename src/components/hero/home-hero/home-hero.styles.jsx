@@ -12,12 +12,12 @@ export const HomeHeroContainer = styled.div.attrs((props) => ({
 }))`
   background-image: url(${(props) => props.bgImg});
   background-repeat: no-repeat;
-  background-size: 1900px;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
   display: block;
-  padding-left: 150px;
+  padding-left: 12%;
 `;
 
 export const HomeHeroContentWrapper = styled(HeroContentWrapper)``;
@@ -28,7 +28,7 @@ export const HomeTitle = styled(GlobalH1).attrs((props) => ({
   transition: { type: "tween", duration: 2 },
 }))`
   width: auto;
-  margin: 50px 0 0 0;
+  margin: 100px 0 0 0;
 `;
 
 export const ServiceContainer = styled.div`

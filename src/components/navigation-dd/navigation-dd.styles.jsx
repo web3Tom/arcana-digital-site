@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { PLink, RouteLink } from "../../components/global.component.styles";
 import { keyframes } from "styled-components";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { device } from "../../components/global.component.styles";
 
 export const NavPLink = styled(PLink)``;
 
@@ -28,6 +29,16 @@ const revealDD = keyframes`
   }
 `;
 
+const revealDDxs = keyframes`
+from {
+  height: 0px;
+}
+
+to {
+  height: 125px;
+}
+`;
+
 // Hidden Wrapper for Dropdown Menu links
 export const DropdownContent = styled.div`
   display: none;
@@ -41,10 +52,15 @@ export const DropdownContent = styled.div`
   gap: 7px;
   padding: 0px 8px;
   top: 50px;
-  left: -20px;
-  z-index: 5;
+  left: 0;
+  z-index: 2;
   background-color: #ffffff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+  @media ${device.laptop} {
+    width: 135px;
+    top: 38px;
+  }
 `;
 
 // Wrapper encompassing ALink and Dropdown Content - trigger for displaying drop down bar
@@ -56,5 +72,13 @@ export const DropDownWrapper = styled.div`
     display: flex;
     animation: ${revealDD} 500ms linear 1;
     animation-fill-mode: forwards;
+  }
+
+  @media ${device.laptop} {
+    &:hover ${DropdownContent} {
+      display: flex;
+      animation: ${revealDDxs} 500ms linear 1;
+      animation-fill-mode: forwards;
+    }
   }
 `;
