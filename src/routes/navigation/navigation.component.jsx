@@ -1,48 +1,36 @@
-import { Outlet, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import { useContext, useState } from "react";
+import { motion } from "framer-motion";
 import { ReactComponent as LOGO } from "../../assets/arcana-logo-final_dark-light-blue-min.svg";
 import { ReactComponent as ALTLOGO } from "../../assets/arcana-logo-final_white.svg";
-// import { NavContext } from "../../contexts/nav-dropdown.context";
-import NavigationDD from "../../components/navigation-dd/navigation-dd.component";
-import { debounce } from "../../utils/helpers.utils";
-import { NavHamburger } from "../../components/global.component.styles";
-import Button, {
-  BUTTON_TYPE_CLASS,
-} from "../../components/button/button.component";
+import NavLinks from "../../components/nav-links/nav-links.component";
+import { device } from "../../components/global.component.styles";
+
+import { mobileMenuVariant } from "../../components/mobile-navigation/mobile-nav-animation.components";
+
+import { NavigationContext } from "../../contexts/navigation.context";
+
+import {
+  ulVariant,
+  liVariant,
+  MOBILE_LINKS,
+} from "../../components/mobile-navigation/mobile-nav-animation.components";
 
 import {
   NavStickyWrapper,
   NavigationContainer,
-  NavLinksContainer,
-  NavAuthLinksContainer,
   NavLogoContainer,
-  NavLink,
-  NavALink,
+  MobileIcon,
+  MobileIconContainer,
+  MobileMenu,
+  MobileUl,
 } from "./navigation.styles";
 
 const Navigation = () => {
-  const [visible, setVisible] = useState(true);
-  const []
-  const navigate = useNavigate();
-  const signupBtn = (e) => {
-    navigate("/");
-  };
-
-  // scroll-handler-function:
-  const handleScroll = debounce(() => {
-    // find current scroll position
-    const currentScrollPos = window.pageYOffset;
-
-    // set state based on location info (explained in more detail below)
-    setVisible(currentScrollPos > 10);
-
-    // set state to new scroll position
-  }, 10);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [visible, handleScroll]);
+  const { visible } = useContext(NavigationContext);
+  const [isMobileOpen, setMobileOpen] = useState(false);
+  const isMobileView = useMediaQuery({ query: device.tablet });
 
   return (
     <>
@@ -51,57 +39,35 @@ const Navigation = () => {
           <NavLogoContainer to="/">
             {visible ? <ALTLOGO /> : <LOGO />}
           </NavLogoContainer>
-          <NavLinksContainer>
-            <NavigationDD label="Features" visible={visible} />
-            <NavLink
-              animation1
-              to="/pricing"
-              hoverColor={visible ? "white" : null}
-              hoverBgColor={visible ? "white" : null}
-            >
-              Pricing
-            </NavLink>
-            <NavLink
-              animation1
-              to="/demo"
-              hoverColor={visible ? "white" : null}
-              hoverBgColor={visible ? "white" : null}
-            >
-              Demo
-            </NavLink>
-            <NavLink
-              animation1
-              to="/why-arcana"
-              hoverColor={visible ? "white" : null}
-              hoverBgColor={visible ? "white" : null}
-            >
-              Why Arcana?
-            </NavLink>
-          </NavLinksContainer>
-          <NavAuthLinksContainer>
-            <NavALink
-              animation1
-              href="https://app.arcanadigital.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              hoverColor={visible ? "white" : null}
-              hoverBgColor={visible ? "white" : null}
-            >
-              Login
-            </NavALink>
-            <Button
-              buttonType={BUTTON_TYPE_CLASS.base}
-              height="40px"
-              padding="0 18px"
-              fontWeight="600"
-              onClick={signupBtn}
-              borderColHov={visible ? "white" : null}
-            >
-              Sign Up
-            </Button>
-          </NavAuthLinksContainer>
+          {!isMobileView && <NavLinks />}
         </NavigationContainer>
+        <MobileMenu
+          initial="closed"
+          animate={isMobileOpen ? "opened" : "closed"}
+          variants={mobileMenuVariant}
+        >
+          <MobileUl variants={ulVariant}>
+            {MOBILE_LINKS.map((navItem) => (
+              <motion.li whileTap={{ scale: 0.95 }} key={navItem.id}>
+                <motion.div variants={liVariant}>{navItem.navTitle}</motion.div>
+              </motion.li>
+            ))}
+          </MobileUl>
+        </MobileMenu>
+        <MobileIconContainer
+          visible={visible}
+          onClick={() => setMobileOpen(!isMobileOpen)}
+        >
+          {isMobileView && (
+            <MobileIcon
+              color={visible ? `white` : `var(--color-primary)`}
+              size={30}
+              rounded
+            />
+          )}
+        </MobileIconContainer>
       </NavStickyWrapper>
+
       <Outlet />
     </>
   );

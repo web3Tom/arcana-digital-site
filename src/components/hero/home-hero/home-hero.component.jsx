@@ -15,9 +15,9 @@ const HomeHero = () => {
         <HomeHeroContentWrapper>
           <HomeTitle
             as={motion.h1}
-            font={`var(--header2-font)`}
+            fontFamily={`var(--header2-font)`}
             color={`var(--color-secondary)`}
-            weight="900"
+            fontWeight="900"
             size="50px"
           >
             Modernize your Business <br />
@@ -28,7 +28,7 @@ const HomeHero = () => {
               as={motion.h1}
               color={`var(--color-secondary)`}
               size="36px"
-              font={`var(--header2-font)`}
+              fontFamily={`var(--header2-font)`}
             >
               Premier CRM Database
             </ServiceTitle>
@@ -36,7 +36,7 @@ const HomeHero = () => {
               as={motion.h1}
               color={`var(--color-secondary)`}
               size="36px"
-              font={`var(--header2-font)`}
+              fontFamily={`var(--header2-font)`}
             >
               Automated Messaging
             </ServiceTitle>
@@ -44,7 +44,7 @@ const HomeHero = () => {
               as={motion.h1}
               color={`var(--color-secondary)`}
               size="36px"
-              font={`var(--header2-font)`}
+              fontFamily={`var(--header2-font)`}
             >
               Done-for-you Services
             </ServiceTitle>

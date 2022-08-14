@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import { Sling as Hamburger } from "hamburger-react";
 
 //MEDIA QUERIES
 const size = {
@@ -29,26 +28,26 @@ export const device = {
 
 // FONT AND HEADLINE STYLES
 export const GlobalH1 = styled.h1.attrs((props) => ({
-  font: props.font || `var(--header-font)`,
+  fontFamily: props.fontFamily || `var(--header-font)`,
   size: props.size || "72px",
-  weight: props.weight || "900",
+  fontWeight: props.fontWeight || "900",
   color: props.color || `var(--color-primary)`,
 }))`
-  font-family: ${(props) => props.font};
+  font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.size};
-  font-weight: ${(props) => props.weight};
+  font-weight: ${(props) => props.fontWeight};
   color: ${(props) => props.color};
 `;
 
 export const GlobalH2 = styled.h2.attrs((props) => ({
-  fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "48px",
-  fontweight: props.weight || "700",
+  fontFamily: props.fontFamily || `var(--body-font)`,
+  fontSize: props.fontSize || "48px",
+  weight: props.weight || "700",
   color: props.color || `var(--color-primary)`,
 }))`
-  font-family: ${(props) => props.fontfamily};
-  font-size: ${(props) => props.fontsize};
-  font-weight: ${(props) => props.fontweight};
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 `;
 
@@ -81,16 +80,16 @@ export const HeroContentWrapper = styled.div`
 
 //React-router Link Component
 export const RouteLink = styled(Link).attrs((props) => ({
-  fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "15px",
-  fontweight: props.weight || "400",
+  fontFamily: props.fontFamily || `var(--body-font)`,
+  size: props.size || "15px",
+  fontWeight: props.fontWeight || "400",
   color: props.color || "black",
   hoverColor: props.hoverColor || `var(--color-primary)`,
   hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
 }))`
-  font-family: ${(props) => props.fontfamily};
-  font-size: ${(props) => props.fontsize};
-  font-weight: ${(props) => props.fontweight};
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.size};
+  font-weight: ${(props) => props.fontWeight};
   color: ${(props) => props.color};
   text-decoration: none;
 
@@ -131,16 +130,16 @@ export const RouteLink = styled(Link).attrs((props) => ({
 
 //Regular a tag
 export const ALink = styled.a.attrs((props) => ({
-  fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "15px",
-  fontweight: props.weight || "400",
+  fontFamily: props.fontFamily || `var(--body-font)`,
+  fontSize: props.fontSize || "15px",
+  fontWeight: props.weight || "400",
   color: props.color || "black",
   hoverColor: props.hoverColor || `var(--color-primary)`,
   hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
 }))`
-  font-family: ${(props) => props.fontfamily};
-  font-size: ${(props) => props.fontsize};
-  font-weight: ${(props) => props.fontweight};
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
   color: ${(props) => props.color};
   text-decoration: none;
 
@@ -181,16 +180,16 @@ export const ALink = styled.a.attrs((props) => ({
 
 //Drop-down p
 export const PLink = styled.p.attrs((props) => ({
-  fontfamily: props.font || `var(--body-font)`,
-  fontsize: props.size || "15px",
-  fontweight: props.weight || "400",
+  fontFamily: props.fontFamily || `var(--body-font)`,
+  fontSize: props.fontSize || "15px",
+  fontWeight: props.fontWeight || "400",
   color: props.color || "black",
   hoverColor: props.hoverColor || `var(--color-primary)`,
   hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
 }))`
-  font-family: ${(props) => props.fontfamily};
-  font-size: ${(props) => props.fontsize};
-  font-weight: ${(props) => props.fontweight};
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
   color: ${(props) => props.color};
   text-decoration: none;
 

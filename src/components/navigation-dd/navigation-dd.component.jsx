@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { NavigationContext } from "../../contexts/navigation.context";
+
 import {
   DropDownWrapper,
   DropdownContent,
@@ -6,7 +9,9 @@ import {
   NavDDLink,
 } from "./navigation-dd.styles";
 
-const NavigationDD = ({ label, visible }) => {
+const NavigationDD = ({ label }) => {
+  const { visible } = useContext(NavigationContext);
+
   return (
     <>
       <DropDownWrapper>

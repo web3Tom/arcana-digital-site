@@ -12,6 +12,9 @@ export const DDIcon = styled(RiArrowDownSLine)`
 
 // Dropdown Menu links
 export const NavDDLink = styled(RouteLink)`
+  padding: 3px 0 3px 0;
+  text-indent: 5px;
+
   &:hover {
     color: #ffffff;
     background-color: var(--color-primary);
@@ -25,7 +28,7 @@ const revealDD = keyframes`
   }
 
   to {
-    height: 150px;
+    height: 146px;
   }
 `;
 
@@ -45,14 +48,14 @@ export const DropdownContent = styled.div`
   position: absolute;
   width: 185px;
   height: 0;
-  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  top: 50px;
+  left: 0;
   transition: height 150ms ease-in-out;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 7px;
-  padding: 0px 8px;
-  top: 50px;
-  left: 0;
+  overflow: hidden;
   z-index: 2;
   background-color: #ffffff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -70,14 +73,14 @@ export const DropDownWrapper = styled.div`
 
   &:hover ${DropdownContent} {
     display: flex;
-    animation: ${revealDD} 500ms linear 1;
+    animation: ${revealDD} 400ms linear 1;
     animation-fill-mode: forwards;
   }
 
   @media ${device.laptop} {
     &:hover ${DropdownContent} {
       display: flex;
-      animation: ${revealDDxs} 500ms linear 1;
+      animation: ${revealDDxs} 400ms linear 1;
       animation-fill-mode: forwards;
     }
   }
