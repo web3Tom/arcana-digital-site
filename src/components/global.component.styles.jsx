@@ -28,7 +28,7 @@ export const device = {
 
 // FONT AND HEADLINE STYLES
 export const GlobalH1 = styled.h1.attrs((props) => ({
-  fontFamily: props.fontFamily || `var(--header-font)`,
+  fontFamily: props.fontFamily || `var(--header4-font)`,
   size: props.size || "72px",
   fontWeight: props.fontWeight || "900",
   color: props.color || `var(--color-primary)`,

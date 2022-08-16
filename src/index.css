@@ -11,6 +11,7 @@
   --header-font: "Anton";
   --header2-font: "Roboto";
   --header3-font: "ethnocentric";
+  --header4-font: "Satoshi";
   --body-font: "Poppins", sans-serif;
   --color-primary: #007cc7;
   --color-secondary: #12232e;
@@ -25,7 +26,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Poppins", "Anton", "ethnocentric", sans-serif;
+  font-family: "Poppins", "Anton", "Satoshi", "ethnocentric", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

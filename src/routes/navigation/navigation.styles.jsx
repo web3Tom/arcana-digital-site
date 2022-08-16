@@ -1,12 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { RouteLink, ALink } from "../../components/global.component.styles";
+import { Link, NavLink } from "react-router-dom";
 import { Sling as Hamburger } from "hamburger-react";
 import { device } from "../../components/global.component.styles";
 import { motion } from "framer-motion";
-
-export const NavLink = styled(RouteLink)``;
-export const NavALink = styled(ALink)``;
 
 export const NavStickyWrapper = styled.div.attrs(({ visible, ...props }) => (
   <div {...props} />
@@ -113,4 +109,18 @@ export const MobileUl = styled(motion.ul)`
     &:hover {
       cursor: pointer;
     }
+`;
+
+export const MobileHomeLink = styled(NavLink)`
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 400;
+  fontfamily: var(--body-font);
+`;
+
+export const MobileNavLink = styled(MobileHomeLink)`
+  &.active {
+    color: var(--color-primary);
+  }
 `;

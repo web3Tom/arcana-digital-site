@@ -1,10 +1,9 @@
 export const MOBILE_LINKS = [
-  { id: 0, navTitle: "Features", path: "/" },
-  { id: 1, navTitle: "Pricing", path: "/pricing" },
-  { id: 2, navTitle: "Demo", path: "/demo" },
-  { id: 3, navTitle: "Why Arcana", path: "/why-arcana" },
-  { id: 4, navTitle: "Log-in", path: "/log-in" },
-  { id: 5, navTitle: "Sign-up", path: "/sign-up" },
+  { id: 0, navTitle: "Pricing", path: "/pricing" },
+  { id: 1, navTitle: "Demo", path: "/demo" },
+  { id: 2, navTitle: "Why Arcana", path: "/why-arcana" },
+  { id: 3, navTitle: "Log-in", path: "/log-in" },
+  { id: 4, navTitle: "Sign-up", path: "/sign-up" },
 ];
 
 export const mobileMenuVariant = {
