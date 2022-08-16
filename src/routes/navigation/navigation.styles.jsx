@@ -83,32 +83,37 @@ export const MobileMenu = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  alighn-items: center;
+  align-items: center;
   background-color: var(--color-secondary);
 `;
 
 export const MobileUl = styled(motion.ul)`
   list-style: none;
   margin-top: 40px;
+  padding: 0;
 
   > li {
-    margin: 20px 0;
     overflow-y: hidden;   
     user-select: none;
     
     > div {
       text-align: center;
       text-transform: capitalize;
-      font-size: 34px;
     }
 
     &:hover {
       cursor: pointer;
     }
+`;
+
+export const MobileLi = styled(motion.li)`
+  overflow-y: hidden;
+  user-select: none;
+  margin: 10px 0;
 `;
 
 export const MobileHomeLink = styled(NavLink)`

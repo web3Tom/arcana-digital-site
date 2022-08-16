@@ -6,11 +6,24 @@ import { debounce } from "../utils/helpers.utils";
 export const NavigationContext = createContext({
   visible: false,
   setVisible: () => {},
+  isMobileOpen: false,
+  setMobileOpen: () => {},
+  isMobileDD: false,
+  setMobileDD: () => {},
 });
 
 export const NavigationProvider = ({ children }) => {
   const [visible, setVisible] = useState(false);
-  const value = { visible, setVisible };
+  const [isMobileOpen, setMobileOpen] = useState(false);
+  const [isMobileDD, setMobileDD] = useState(false);
+  const value = {
+    visible,
+    setVisible,
+    isMobileOpen,
+    setMobileOpen,
+    isMobileDD,
+    setMobileDD,
+  };
 
   const handleScroll = debounce(() => {
     const currentScrollPos = window.pageYOffset;
@@ -21,6 +34,11 @@ export const NavigationProvider = ({ children }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [visible, handleScroll]);
+
+  useEffect(() => {
+    if (isMobileOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [isMobileOpen]);
 
   return (
     <NavigationContext.Provider value={value}>

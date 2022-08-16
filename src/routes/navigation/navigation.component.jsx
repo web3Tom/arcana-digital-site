@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { motion } from "framer-motion";
 import { ReactComponent as LOGO } from "../../assets/arcana-logo-final_dark-light-blue-min.svg";
 import { ReactComponent as ALTLOGO } from "../../assets/arcana-logo-final_white.svg";
 import NavLinks from "../../components/nav-links/nav-links.component";
 import { device } from "../../components/global.component.styles";
+import MobileNavDD from "../../components/mobile-navigation/mobile-nav-dd.component";
 
 import { mobileMenuVariant } from "../../components/mobile-navigation/mobile-nav-animation.components";
 
@@ -27,11 +28,12 @@ import {
   MobileUl,
   MobileHomeLink,
   MobileNavLink,
+  MobileLi,
 } from "./navigation.styles";
 
 const Navigation = () => {
-  const { visible } = useContext(NavigationContext);
-  const [isMobileOpen, setMobileOpen] = useState(false);
+  const { visible, isMobileOpen, setMobileOpen } =
+    useContext(NavigationContext);
   const isMobileView = useMediaQuery({ query: device.tablet });
 
   return (
@@ -49,16 +51,17 @@ const Navigation = () => {
           variants={mobileMenuVariant}
         >
           <MobileUl variants={ulVariant}>
-            <motion.li whileTap={{ scale: 0.95 }}>
+            <MobileLi whileTap={{ scale: 0.95 }}>
               <motion.div
                 variants={liVariant}
                 onClick={() => setMobileOpen(!isMobileOpen)}
               >
                 <MobileHomeLink to="/">Home</MobileHomeLink>
               </motion.div>
-            </motion.li>
+            </MobileLi>
+            <MobileNavDD />
             {MOBILE_LINKS.map((navItem) => (
-              <motion.li whileTap={{ scale: 0.95 }} key={navItem.id}>
+              <MobileLi whileTap={{ scale: 0.95 }} key={navItem.id}>
                 <motion.div
                   variants={liVariant}
                   onClick={() => setMobileOpen(!isMobileOpen)}
@@ -67,7 +70,7 @@ const Navigation = () => {
                     {navItem.navTitle}
                   </MobileNavLink>
                 </motion.div>
-              </motion.li>
+              </MobileLi>
             ))}
           </MobileUl>
         </MobileMenu>

@@ -6,6 +6,13 @@ export const MOBILE_LINKS = [
   { id: 4, navTitle: "Sign-up", path: "/sign-up" },
 ];
 
+export const MOBILE_DD_LINKS = [
+  { id: 0, navTitle: "Messaging", path: "/messaging" },
+  { id: 0, navTitle: "Reviews", path: "/reviews" },
+  { id: 0, navTitle: "WebChat", path: "/webchat" },
+  { id: 0, navTitle: "Payments", path: "/payments" },
+];
+
 export const mobileMenuVariant = {
   opened: {
     y: "0%",
@@ -45,7 +52,7 @@ export const liVariant = {
     opacity: 1,
     y: "0%",
     transition: {
-      duration: 0.65,
+      duration: 0.63,
       ease: "easeOut",
     },
   },
@@ -55,6 +62,27 @@ export const liVariant = {
     transition: {
       duration: 0.25,
       ease: "easeInOut",
+    },
+  },
+};
+
+export const MobileFeaturesDD = {
+  opened: {
+    height: "auto",
+    opacity: 1,
+    transition: {
+      delay: 0.15,
+      duration: 1.1,
+      ease: [0.74, 0, 0.19, 1.02],
+    },
+  },
+  closed: {
+    height: "0px",
+    opacity: 0,
+    transition: {
+      delay: 0.35,
+      duration: 1.1,
+      ease: [0.74, 0, 0.19, 1.02],
     },
   },
 };
