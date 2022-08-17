@@ -6,9 +6,10 @@ import { NavigationContext } from "../../contexts/navigation.context";
 import { MOBILE_DD_LINKS } from "../../components/mobile-navigation/mobile-nav-animation.components";
 
 import {
-  ulVariant,
   liVariant,
   MobileFeaturesDD,
+  mobileLiVariant,
+  mobileUlVariant,
 } from "./mobile-nav-animation.components";
 
 import {
@@ -40,11 +41,11 @@ const MobileNavDD = () => {
         inital="closed"
         variants={MobileFeaturesDD}
       >
-        <MobileDDUl variants={ulVariant}>
+        <MobileDDUl variants={mobileUlVariant}>
           {MOBILE_DD_LINKS.map((mobileDDItem) => (
             <MobileDDLi whileTap={{ scale: 0.95 }} key={mobileDDItem.id}>
               <motion.div
-                variants={liVariant}
+                variants={mobileLiVariant}
                 onClick={() => setMobileOpen(!isMobileOpen)}
               >
                 <MobileDDLink to={mobileDDItem.path}>

@@ -36,8 +36,13 @@ export const NavigationProvider = ({ children }) => {
   }, [visible, handleScroll]);
 
   useEffect(() => {
-    if (isMobileOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "unset";
+    if (isMobileOpen) {
+      document.body.style.overflow = "hidden";
+      console.log("mobile is open");
+    } else {
+      document.body.style.overflow = "unset";
+      console.log("mobile is closed");
+    }
   }, [isMobileOpen]);
 
   return (

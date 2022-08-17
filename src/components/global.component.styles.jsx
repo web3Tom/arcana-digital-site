@@ -84,8 +84,8 @@ export const RouteLink = styled(Link).attrs((props) => ({
   size: props.size || "15px",
   fontWeight: props.fontWeight || "400",
   color: props.color || "black",
-  hoverColor: props.hoverColor || `var(--color-primary)`,
-  hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
+  hovercolor: props.hovercolor || `var(--color-primary)`,
+  hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.size};
@@ -99,7 +99,7 @@ export const RouteLink = styled(Link).attrs((props) => ({
       position: relative;
 
       &:hover {
-        color: ${(props) => props.hoverColor};
+        color: ${(props) => props.hovercolor};
       }
 
       &::after {
@@ -109,7 +109,7 @@ export const RouteLink = styled(Link).attrs((props) => ({
         left: 0;
         width: 100%;
         height: 0.05em;
-        background-color: ${(props) => props.hoverBgColor};
+        background-color: ${(props) => props.hoverbgcolor};
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
         transform: scale(0);
@@ -134,8 +134,8 @@ export const ALink = styled.a.attrs((props) => ({
   fontSize: props.fontSize || "15px",
   fontWeight: props.weight || "400",
   color: props.color || "black",
-  hoverColor: props.hoverColor || `var(--color-primary)`,
-  hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
+  hovercolor: props.hovercolor || `var(--color-primary)`,
+  hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.fontSize};
@@ -149,7 +149,7 @@ export const ALink = styled.a.attrs((props) => ({
       position: relative;
 
       &:hover {
-        color: ${(props) => props.hoverColor};
+        color: ${(props) => props.hovercolor};
       }
 
       &::after {
@@ -159,7 +159,7 @@ export const ALink = styled.a.attrs((props) => ({
         left: 0;
         width: 100%;
         height: 0.05em;
-        background-color: ${(props) => props.hoverBgColor};
+        background-color: ${(props) => props.hoverbgcolor};
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
         transform: scale(0);
@@ -184,8 +184,8 @@ export const PLink = styled.p.attrs((props) => ({
   fontSize: props.fontSize || "15px",
   fontWeight: props.fontWeight || "400",
   color: props.color || "black",
-  hoverColor: props.hoverColor || `var(--color-primary)`,
-  hoverBgColor: props.hoverBgColor || `var(--color-primary)`,
+  hovercolor: props.hovercolor || `var(--color-primary)`,
+  hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.fontSize};
@@ -199,7 +199,7 @@ export const PLink = styled.p.attrs((props) => ({
       position: relative;
 
       &:hover {
-        color: ${(props) => props.hoverColor};
+        color: ${(props) => props.hovercolor};
       }
 
       &::after {
@@ -209,7 +209,7 @@ export const PLink = styled.p.attrs((props) => ({
         left: 0;
         width: 100%;
         height: 0.05em;
-        background-color: ${(props) => props.hoverBgColor};
+        background-color: ${(props) => props.hoverbgcolor};
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
         transform: scale(0);

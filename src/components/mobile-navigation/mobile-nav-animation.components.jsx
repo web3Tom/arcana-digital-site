@@ -8,9 +8,9 @@ export const MOBILE_LINKS = [
 
 export const MOBILE_DD_LINKS = [
   { id: 0, navTitle: "Messaging", path: "/messaging" },
-  { id: 0, navTitle: "Reviews", path: "/reviews" },
-  { id: 0, navTitle: "WebChat", path: "/webchat" },
-  { id: 0, navTitle: "Payments", path: "/payments" },
+  { id: 1, navTitle: "Reviews", path: "/reviews" },
+  { id: 2, navTitle: "WebChat", path: "/webchat" },
+  { id: 3, navTitle: "Payments", path: "/payments" },
 ];
 
 export const mobileMenuVariant = {
@@ -71,18 +71,52 @@ export const MobileFeaturesDD = {
     height: "auto",
     opacity: 1,
     transition: {
-      delay: 0.15,
-      duration: 1.1,
-      ease: [0.74, 0, 0.19, 1.02],
+      delay: 0.1,
+      duration: 0.5,
+      ease: [0.32, 0, 0.19, 0.45],
     },
   },
   closed: {
     height: "0px",
     opacity: 0,
     transition: {
-      delay: 0.35,
-      duration: 1.1,
-      ease: [0.74, 0, 0.19, 1.02],
+      delay: 0.1,
+      duration: 0.5,
+      ease: [0.32, 0, 0.19, 0.45],
+    },
+  },
+};
+
+export const mobileUlVariant = {
+  opened: {
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.15,
+    },
+  },
+  closed: {
+    transition: {
+      staggerChildren: 0.12,
+      staggerDirection: -1,
+    },
+  },
+};
+
+export const mobileLiVariant = {
+  opened: {
+    opacity: 1,
+    y: "0%",
+    transition: {
+      duration: 0.32,
+      ease: "easeOut",
+    },
+  },
+  closed: {
+    opacity: 0,
+    y: "100%",
+    transition: {
+      duration: 0.15,
+      ease: "easeInOut",
     },
   },
 };

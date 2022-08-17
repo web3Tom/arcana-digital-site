@@ -29,24 +29,24 @@ const NavLinks = () => {
         <NavLink
           animation1
           to="/pricing"
-          hoverColor={visible ? "white" : null}
-          hoverBgColor={visible ? "white" : null}
+          hovercolor={visible ? "white" : null}
+          hoverbgcolor={visible ? "white" : null}
         >
           Pricing
         </NavLink>
         <NavLink
           animation1
           to="/demo"
-          hoverColor={visible ? "white" : null}
-          hoverBgColor={visible ? "white" : null}
+          hovercolor={visible ? "white" : null}
+          hoverbgcolor={visible ? "white" : null}
         >
           Demo
         </NavLink>
         <NavLink
           animation1
           to="/why-arcana"
-          hoverColor={visible ? "white" : null}
-          hoverBgColor={visible ? "white" : null}
+          hovercolor={visible ? "white" : null}
+          hoverbgcolor={visible ? "white" : null}
         >
           Why Arcana?
         </NavLink>
@@ -57,8 +57,8 @@ const NavLinks = () => {
           href="https://app.arcanadigital.io"
           target="_blank"
           rel="noopener noreferrer"
-          hoverColor={visible ? "white" : null}
-          hoverBgColor={visible ? "white" : null}
+          hovercolor={visible ? "white" : null}
+          hoverbgcolor={visible ? "white" : null}
         >
           Login
         </NavALink>

@@ -17,8 +17,8 @@ const NavigationDD = ({ label }) => {
       <DropDownWrapper>
         <NavPLink
           animation1
-          hoverColor={visible ? "white" : null}
-          hoverBgColor={visible ? "white" : null}
+          hovercolor={visible ? "white" : null}
+          hoverbgcolor={visible ? "white" : null}
         >
           {label} <DDIcon />
         </NavPLink>
