@@ -27,22 +27,25 @@ const NavLinks = () => {
       <NavLinksContainer>
         <NavigationDD label="Features" />
         <NavLink
+          visible={visible}
           animation1
           to="/pricing"
-          hovercolor={visible ? "white" : null}
-          hoverbgcolor={visible ? "white" : null}
+          hovercolor={visible ? `var(--color-primary)` : null}
+          hoverbgcolor={visible ? `var(--color-primary)` : null}
         >
           Pricing
         </NavLink>
         <NavLink
+          visible={visible}
           animation1
           to="/demo"
-          hovercolor={visible ? "white" : null}
-          hoverbgcolor={visible ? "white" : null}
+          hovercolor={visible ? "white" : "white"}
+          hoverbgcolor={visible ? "white" : "white"}
         >
           Demo
         </NavLink>
         <NavLink
+          visible={visible}
           animation1
           to="/why-arcana"
           hovercolor={visible ? "white" : null}
@@ -53,6 +56,7 @@ const NavLinks = () => {
       </NavLinksContainer>
       <NavAuthLinksContainer>
         <NavALink
+          visible={visible}
           animation1
           href="https://app.arcanadigital.io"
           target="_blank"
@@ -72,12 +76,10 @@ const NavLinks = () => {
           </Button>
         ) : (
           <Button
-            buttonType={BUTTON_TYPE_CLASS.base}
+            buttonType={BUTTON_TYPE_CLASS.gradient}
             onClick={signupBtn}
             height="38px"
-          >
-            Sign Up
-          </Button>
+          ></Button>
         )}
       </NavAuthLinksContainer>
     </>

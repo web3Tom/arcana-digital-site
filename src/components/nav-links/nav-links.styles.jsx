@@ -10,7 +10,7 @@ export const NavLinksContainer = styled.div`
   height: 100%;
   width: 60%;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 30px;
 
@@ -27,8 +27,7 @@ export const NavAuthLinksContainer = styled.div`
   display: flex;
   height: 100%;
   width: 15%;
-  align-self: flex-end;
-  justify-content: flex-end;
+  justify-content: cetner;
   align-items: center;
   gap: 30px;
 

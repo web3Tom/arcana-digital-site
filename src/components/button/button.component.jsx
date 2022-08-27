@@ -13,10 +13,10 @@ const getButton = (buttonType = BUTTON_TYPE_CLASS.base) =>
     [BUTTON_TYPE_CLASS.gradient]: GradientButton,
   }[buttonType]);
 
-const Button = ({ children, buttonType, ...otherProps }) => {
+const Button = ({ children, buttonType, ...props }) => {
   const CustomButton = getButton(buttonType);
 
-  return <CustomButton {...otherProps}>{children}</CustomButton>;
+  return <CustomButton {...props}>{children}</CustomButton>;
 };
 
 export default Button;

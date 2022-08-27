@@ -6,17 +6,23 @@ import { device } from "../../components/global.component.styles";
 
 export const NavPLink = styled(PLink)``;
 
-export const DDIcon = styled(RiArrowDownSLine)`
+export const DDIcon = styled(RiArrowDownSLine).attrs((visible, ...props) => ({
+  color:
+    props.color ||
+    (({ visible }) => (visible ? "black" : `var(--color-primary)`)),
+}))`
   vertical-align: middle;
+  color: ${(props) => props.color};
 `;
 
 // Dropdown Menu links
 export const NavDDLink = styled(RouteLink)`
   padding: 3px 0 3px 0;
   text-indent: 5px;
+  color: var(--color-secondary);
 
   &:hover {
-    color: #ffffff;
+    color: white;
     background-color: var(--color-primary);
   }
 `;
@@ -57,7 +63,7 @@ export const DropdownContent = styled.div`
   justify-content: flex-start;
   overflow: hidden;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
   @media ${device.laptop} {

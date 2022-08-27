@@ -16,11 +16,12 @@ const NavigationDD = ({ label }) => {
     <>
       <DropDownWrapper>
         <NavPLink
+          visible={visible}
           animation1
           hovercolor={visible ? "white" : null}
           hoverbgcolor={visible ? "white" : null}
         >
-          {label} <DDIcon />
+          {label} <DDIcon visible={visible} />
         </NavPLink>
         <DropdownContent>
           <NavDDLink to="messaging">Messaging</NavDDLink>

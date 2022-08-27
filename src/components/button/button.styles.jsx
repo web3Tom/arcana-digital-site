@@ -8,17 +8,17 @@ export const BaseButton = styled.button.attrs((props) => ({
   bgColor: props.bgColor || `var(--color-primary)`,
   padding: props.padding || "0 18px",
   fontSize: props.fontSize || "15px",
-  fontWeight: props.fontWeight || "600",
+  weight: props.weight || "600",
   borderColor: props.borderColor || `var(--color-primary)`,
   borderColHov: props.borderColHov || `var(--color-secondary)`,
 }))`
-  font-family: "Poppins";
+  font-family: var(--font-primary);
   max-width: 215px;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   padding: ${(props) => props.padding};
   font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   background-color: ${(props) => props.bgColor};
   color: ${(props) => props.color};
   border: 1px solid ${(props) => props.borderColor};
@@ -33,7 +33,7 @@ export const BaseButton = styled.button.attrs((props) => ({
   align-items: center;
   -webkit-transition: background 0.3s ease;
   &:hover {
-    background-color: var(--color-whiteBlue);
+    background-color: white;
     color: var(--color-primary);
     border-color: ${(props) => props.borderColHov};
   }
@@ -51,17 +51,17 @@ export const InvertedButton = styled.button.attrs((props) => ({
   bgColor: props.bgColor || "#ffffff",
   padding: props.padding || "0 18px",
   fontSize: props.fontSize || "15px",
-  fontWeight: props.fontWeight || "600",
+  weight: props.weight || "600",
   borderColor: props.borderColor || `var(--color-secondary)`,
   borderThick: props.borderThick || "1px",
 }))`
-  font-family: "Poppins";
+  font-family: var(--font-primary);
   max-width: 215px;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   padding: ${(props) => props.padding};
   font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   background-color: ${(props) => props.bgColor};
   color: ${(props) => props.color};
   border: ${(props) => props.borderThick} solid ${(props) => props.borderColor};

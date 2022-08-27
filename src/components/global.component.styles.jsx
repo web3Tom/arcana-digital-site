@@ -22,74 +22,52 @@ export const device = {
   desktop: `screen and (max-width: ${size.desktop})`,
   desktopL: `screen and (max-width: ${size.desktop})`,
 };
-//
-
-//
 
 // FONT AND HEADLINE STYLES
 export const GlobalH1 = styled.h1.attrs((props) => ({
-  fontFamily: props.fontFamily || `var(--header4-font)`,
+  fontFamily: props.fontFamily || `var(--font-primary)`,
   size: props.size || "72px",
-  fontWeight: props.fontWeight || "900",
+  weight: props.weight || "900",
   color: props.color || `var(--color-primary)`,
+  spacing: props.spacing || "normal",
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.size};
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
+  margin: 0;
+  letter-spacing: ${(props) => props.spacing};
 `;
 
 export const GlobalH2 = styled.h2.attrs((props) => ({
-  fontFamily: props.fontFamily || `var(--body-font)`,
-  fontSize: props.fontSize || "48px",
+  fontFamily: props.fontFamily || `var(--font-primary)`,
+  size: props.size || "48px",
   weight: props.weight || "700",
   color: props.color || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
-  font-size: ${(props) => props.fontSize};
+  font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
+  margin: 0;
 `;
-
-//
-//
-//
-
-// ~GLOBAL CONTAINER STYLES~
-
-//
-//
-//
-
-//Hero context container
-export const HeroContentWrapper = styled.div`
-  display: block;
-  padding-top: 60px;
-  width: 100%;
-`;
-
-//
-//
-//
 
 // ~LINK STYLES~
 
-//
-//
-//
-
 //React-router Link Component
-export const RouteLink = styled(Link).attrs((props) => ({
-  fontFamily: props.fontFamily || `var(--body-font)`,
+export const RouteLink = styled(Link).attrs((visible, ...props) => ({
+  fontFamily: props.fontFamily || `var(--font-primary)`,
   size: props.size || "15px",
-  fontWeight: props.fontWeight || "400",
-  color: props.color || "black",
+  weight: props.weight || "400",
+  color:
+    props.color ||
+    (({ visible }) => (visible ? `var(--color-secondary)` : "white")),
   hovercolor: props.hovercolor || `var(--color-primary)`,
   hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.size};
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
   text-decoration: none;
 
@@ -129,17 +107,19 @@ export const RouteLink = styled(Link).attrs((props) => ({
 `;
 
 //Regular a tag
-export const ALink = styled.a.attrs((props) => ({
-  fontFamily: props.fontFamily || `var(--body-font)`,
+export const ALink = styled.a.attrs((visible, ...props) => ({
+  fontFamily: props.fontFamily || `var(--font-primary)`,
   fontSize: props.fontSize || "15px",
-  fontWeight: props.weight || "400",
-  color: props.color || "black",
+  weight: props.weight || "400",
+  color:
+    props.color ||
+    (({ visible }) => (visible ? `var(--color-secondary)` : "white")),
   hovercolor: props.hovercolor || `var(--color-primary)`,
   hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
   text-decoration: none;
 
@@ -179,17 +159,19 @@ export const ALink = styled.a.attrs((props) => ({
 `;
 
 //Drop-down p
-export const PLink = styled.p.attrs((props) => ({
-  fontFamily: props.fontFamily || `var(--body-font)`,
+export const PLink = styled.p.attrs((visible, ...props) => ({
+  fontFamily: props.fontFamily || `var(--font-primary)`,
   fontSize: props.fontSize || "15px",
-  fontWeight: props.fontWeight || "400",
-  color: props.color || "black",
+  weight: props.weight || "400",
+  color:
+    props.color ||
+    (({ visible }) => (visible ? `var(--color-secondary)` : "white")),
   hovercolor: props.hovercolor || `var(--color-primary)`,
   hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
   text-decoration: none;
 
@@ -228,12 +210,13 @@ export const PLink = styled.p.attrs((props) => ({
   }
 `;
 
-//
-//
-//
+// ~GLOBAL CONTAINER STYLES~
 
-// ~NAVIGATION HAMBURGER~
-
-//
-//
-//
+//Div Container for all Routes -- includes padding top to account for fixed nav -- placed in app.js
+export const GlobalContentContainer = styled.div`
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 85px;
+  margin: 0;
+`;

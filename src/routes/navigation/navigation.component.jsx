@@ -41,7 +41,7 @@ const Navigation = () => {
       <NavStickyWrapper visible={visible}>
         <NavigationContainer>
           <NavLogoContainer to="/">
-            {visible ? <ALTLOGO /> : <LOGO />}
+            {visible ? <LOGO /> : <ALTLOGO />}
           </NavLogoContainer>
           {!isMobileView && <NavLinks />}
         </NavigationContainer>
@@ -82,7 +82,7 @@ const Navigation = () => {
             <MobileIcon
               toggled={isMobileOpen}
               toggle={setMobileOpen}
-              color={visible ? `white` : `var(--color-primary)`}
+              color={visible ? `var(--color-primary)` : `white`}
               size={30}
               rounded
             />

@@ -8,8 +8,7 @@ export const NavStickyWrapper = styled.div.attrs(({ visible, ...props }) => (
   <div {...props} />
 ))`
   position: fixed;
-  background-color: ${({ visible }) =>
-    visible ? `var(--color-tertiary)` : `transparent`};
+  background-color: ${({ visible }) => (visible ? "white" : `transparent`)};
   margin: 0;
   padding: 0;
   left: 0;
