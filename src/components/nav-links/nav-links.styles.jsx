@@ -27,7 +27,7 @@ export const NavAuthLinksContainer = styled.div`
   display: flex;
   height: 100%;
   width: 15%;
-  justify-content: cetner;
+  justify-content: flex-end;
   align-items: center;
   gap: 30px;
 

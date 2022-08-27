@@ -21,6 +21,9 @@ const HomeHero = () => {
         <HomeHeroContainer>
           <HomeHeroH1
             as={motion.h1}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             fontFamily="var(--font-primary)"
             weight="400"
             size="60px"
@@ -30,6 +33,9 @@ const HomeHero = () => {
           </HomeHeroH1>
           <HomeHeroH1
             as={motion.h1}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1, ease: "easeOut" }}
             fontFamily="var(--font-primary)"
             weight="600"
             size="92px"

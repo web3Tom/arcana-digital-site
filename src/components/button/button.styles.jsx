@@ -88,21 +88,19 @@ export const InvertedButton = styled.button.attrs((props) => ({
   }
 `;
 
-export const GradientButton = styled.button`
-  width: 100px;
-  max-width: 215px;
-  height: 45px;
-  border-radius: 120px;
-  position: relative;
-  font-family: "Poppins";
-  font-size: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+export const GradientButton = styled.button.attrs((props) => ({
+  gwidth: props.gwidth || "210px",
+  gheight: props.gheight || "50px",
+}))`
   display: flex;
-  flex-shrink: 0;
+  position: relative;
+  border: 1px solid rgba(19, 20, 22);
+  border-radius: 120px;
   justify-content: center;
+  flex-shrink: 0;
   align-items: center;
+  width: ${(props) => props.gwidth};
+  height: ${(props) => props.gheight};
   background: linear-gradient(
     60deg,
     #12232e,
@@ -113,65 +111,36 @@ export const GradientButton = styled.button`
     #00a315
   );
   cursor: pointer;
-  line-height: 12px;
-
-  &::before {
-    content: "";
-    z-index: 1;
-    position: absolite;
-    display: block;
-    width: 80%;
-    height: 70%;
-    filter: blur(15px);
-    opacity: 0;
-    background: linear-gradient(
-      60deg,
-      #12232e,
-      #007cc7,
-      #4da8da,
-      #00a49a,
-      #00c742,
-      #00a315
-    );
-    transition: 0.3s opacity ease-in-out;
-  }
-
-  &:hover::before {
-    filter: blur(15px);
-    transition: 0.3s opacity ease-in-out;
-    opacity: 0;
-    background: linear-gradient(
-      60deg,
-      #12232e,
-      #007cc7,
-      #4da8da,
-      #00a49a,
-      #00c742,
-      #00a315
-    );
-  }
 
   &::after {
-    content: "Sign-Up";
+    content: "Schedule A Free Call";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    border-radius: 120px;
+    width: 95%;
+    height: 80%;
     text-align: center;
-    line-height: 32px;
-    font-family: "Poppins";
+    font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: #FFFFFF;
-    position: absolute;
-    display: block;
-    border-radius: 120px;
-    width: 90%;
-    height: 80%;
-    top: 10%;
-    left: 5%;
-    background-color: rgba(19,20,22);
+    color: #ffffff;
+    background-color: rgba(19, 20, 22);
+    transition: width 0.2s linear, height 0.2s linear;
 
-  @media ${device.laptop} {
-    font-size: 12px;
-    height: 35px;
+    @media ${device.laptop} {
+      font-size: 12px;
+      height: 35px;
+    }
+  }
+
+  &:hover {
+    &::after {
+      width: 102%;
+      height: 102%;
+    }
   }
 `;

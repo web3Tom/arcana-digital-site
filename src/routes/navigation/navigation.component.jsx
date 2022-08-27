@@ -39,7 +39,12 @@ const Navigation = () => {
   return (
     <>
       <NavStickyWrapper visible={visible}>
-        <NavigationContainer>
+        <NavigationContainer
+          as={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        >
           <NavLogoContainer to="/">
             {visible ? <LOGO /> : <ALTLOGO />}
           </NavLogoContainer>
