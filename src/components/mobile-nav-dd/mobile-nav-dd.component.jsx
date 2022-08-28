@@ -3,24 +3,20 @@ import { motion } from "framer-motion";
 
 import { NavigationContext } from "../../contexts/navigation.context";
 
-import { MOBILE_DD_LINKS } from "../../components/mobile-navigation/mobile-nav-animation.components";
-
 import {
+  MobileDDIcon,
+  FeaturesDDMenu,
+  MobileLi,
+  MobileFeaturesDropDown,
+  MobileDDUl,
+  MobileDDLi,
+  MobileDDLink,
+  MOBILE_DD_LINKS,
   liVariant,
   MobileFeaturesDD,
   mobileLiVariant,
   mobileUlVariant,
-} from "./mobile-nav-animation.components";
-
-import {
-  MobileDDIcon,
-  FeaturesDDMenu,
-  MobileDDUl,
-  MobileDDLi,
-  MobileDDLink,
 } from "./mobile-nav-dd.styles";
-
-import { MobileLi, MobileFeaturesDropDown } from "./mobile-nav-dd.styles";
 
 const MobileNavDD = () => {
   const { isMobileOpen, setMobileOpen, isMobileDD, setMobileDD } =

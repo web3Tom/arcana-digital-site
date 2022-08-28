@@ -20,7 +20,6 @@ export const device = {
   laptop: `screen and (max-width: ${size.laptop})`,
   laptopL: `screen and (max-width: ${size.laptopL})`,
   desktop: `screen and (max-width: ${size.desktop})`,
-  desktopL: `screen and (max-width: ${size.desktop})`,
 };
 
 // FONT AND HEADLINE STYLES
@@ -55,13 +54,13 @@ export const GlobalH2 = styled.h2.attrs((props) => ({
 // ~LINK STYLES~
 
 //React-router Link Component
-export const RouteLink = styled(Link).attrs((visible, ...props) => ({
+export const RouteLink = styled(Link).attrs((scrolled, ...props) => ({
   fontFamily: props.fontFamily || `var(--font-primary)`,
   size: props.size || "15px",
   weight: props.weight || "400",
   color:
     props.color ||
-    (({ visible }) => (visible ? `var(--color-secondary)` : "white")),
+    (({ scrolled }) => (scrolled ? `var(--color-secondary)` : "white")),
   hovercolor: props.hovercolor || `var(--color-primary)`,
   hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
@@ -107,13 +106,13 @@ export const RouteLink = styled(Link).attrs((visible, ...props) => ({
 `;
 
 //Regular a tag
-export const ALink = styled.a.attrs((visible, ...props) => ({
+export const ALink = styled.a.attrs((scrolled, ...props) => ({
   fontFamily: props.fontFamily || `var(--font-primary)`,
   fontSize: props.fontSize || "15px",
   weight: props.weight || "400",
   color:
     props.color ||
-    (({ visible }) => (visible ? `var(--color-secondary)` : "white")),
+    (({ scrolled }) => (scrolled ? `var(--color-secondary)` : "white")),
   hovercolor: props.hovercolor || `var(--color-primary)`,
   hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`
@@ -159,13 +158,13 @@ export const ALink = styled.a.attrs((visible, ...props) => ({
 `;
 
 //Drop-down p
-export const PLink = styled.p.attrs((visible, ...props) => ({
+export const PLink = styled.p.attrs((scrolled, ...props) => ({
   fontFamily: props.fontFamily || `var(--font-primary)`,
   fontSize: props.fontSize || "15px",
   weight: props.weight || "400",
   color:
     props.color ||
-    (({ visible }) => (visible ? `var(--color-secondary)` : "white")),
+    (({ scrolled }) => (scrolled ? `var(--color-secondary)` : "white")),
   hovercolor: props.hovercolor || `var(--color-primary)`,
   hoverbgcolor: props.hoverbgcolor || `var(--color-primary)`,
 }))`

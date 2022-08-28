@@ -31,7 +31,10 @@ export const BaseButton = styled.button.attrs((props) => ({
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  -webkit-transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  transition: background 0.3s ease-in-out, color 0.3s ease,
+    border-color 0.3s ease;
   &:hover {
     background-color: white;
     color: var(--color-primary);

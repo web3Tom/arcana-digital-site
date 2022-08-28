@@ -17,10 +17,6 @@ export const NavLinksContainer = styled.div`
   &:hover {
     cursor: pointer;
   }
-
-  @media ${device.laptop} {
-    gap: 20px;
-  }
 `;
 
 export const NavAuthLinksContainer = styled.div`
@@ -30,8 +26,4 @@ export const NavAuthLinksContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   gap: 30px;
-
-  @media ${device.laptop} {
-    gap: 15px;
-  }
 `;

@@ -6,10 +6,10 @@ import { device } from "../../components/global.component.styles";
 
 export const NavPLink = styled(PLink)``;
 
-export const DDIcon = styled(RiArrowDownSLine).attrs((visible, ...props) => ({
+export const DDIcon = styled(RiArrowDownSLine).attrs((scrolled, ...props) => ({
   color:
     props.color ||
-    (({ visible }) => (visible ? "black" : `var(--color-primary)`)),
+    (({ scrolled }) => (scrolled ? "black" : `var(--color-primary)`)),
 }))`
   vertical-align: middle;
   color: ${(props) => props.color};

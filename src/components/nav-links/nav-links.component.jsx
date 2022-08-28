@@ -16,7 +16,7 @@ import {
 } from "./nav-links.styles";
 
 const NavLinks = () => {
-  const { visible } = useContext(NavigationContext);
+  const { scrolled } = useContext(NavigationContext);
   const navigate = useNavigate();
   const signupBtn = (e) => {
     navigate("/");
@@ -27,60 +27,46 @@ const NavLinks = () => {
       <NavLinksContainer>
         <NavigationDD label="Features" />
         <NavLink
-          visible={visible}
+          scrolled={scrolled}
           animation1
           to="/pricing"
-          hovercolor={visible ? `var(--color-primary)` : null}
-          hoverbgcolor={visible ? `var(--color-primary)` : null}
+          hovercolor={scrolled ? `var(--color-primary)` : null}
+          hoverbgcolor={scrolled ? `var(--color-primary)` : null}
         >
           Pricing
         </NavLink>
         <NavLink
-          visible={visible}
+          scrolled={scrolled}
           animation1
           to="/demo"
-          hovercolor={visible ? "white" : "white"}
-          hoverbgcolor={visible ? "white" : "white"}
+          hovercolor={scrolled ? "white" : "white"}
+          hoverbgcolor={scrolled ? "white" : "white"}
         >
           Demo
         </NavLink>
         <NavLink
-          visible={visible}
+          scrolled={scrolled}
           animation1
           to="/why-arcana"
-          hovercolor={visible ? "white" : null}
-          hoverbgcolor={visible ? "white" : null}
+          hovercolor={scrolled ? "white" : null}
+          hoverbgcolor={scrolled ? "white" : null}
         >
           Why Arcana?
         </NavLink>
       </NavLinksContainer>
       <NavAuthLinksContainer>
         <NavALink
-          visible={visible}
+          scrolled={scrolled}
           animation1
           href="https://app.arcanadigital.io"
           target="_blank"
           rel="noopener noreferrer"
-          hovercolor={visible ? "white" : null}
-          hoverbgcolor={visible ? "white" : null}
+          hovercolor={scrolled ? "white" : null}
+          hoverbgcolor={scrolled ? "white" : null}
         >
           Login
         </NavALink>
-        {visible ? (
-          <Button
-            buttonType={BUTTON_TYPE_CLASS.inverted}
-            onClick={signupBtn}
-            height="38px"
-          >
-            Sign-up
-          </Button>
-        ) : (
-          <Button
-            buttonType={BUTTON_TYPE_CLASS.gradient}
-            onClick={signupBtn}
-            height="38px"
-          ></Button>
-        )}
+        <Button buttonType={BUTTON_TYPE_CLASS.gradient} onClick={signupBtn} />
       </NavAuthLinksContainer>
     </>
   );

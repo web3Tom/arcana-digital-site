@@ -10,18 +10,18 @@ import {
 } from "./navigation-dd.styles";
 
 const NavigationDD = ({ label }) => {
-  const { visible } = useContext(NavigationContext);
+  const { scrolled } = useContext(NavigationContext);
 
   return (
     <>
       <DropDownWrapper>
         <NavPLink
-          visible={visible}
+          scrolled={scrolled}
           animation1
-          hovercolor={visible ? "white" : null}
-          hoverbgcolor={visible ? "white" : null}
+          hovercolor={scrolled ? "white" : null}
+          hoverbgcolor={scrolled ? "white" : null}
         >
-          {label} <DDIcon visible={visible} />
+          {label} <DDIcon scrolled={scrolled} />
         </NavPLink>
         <DropdownContent>
           <NavDDLink to="messaging">Messaging</NavDDLink>
