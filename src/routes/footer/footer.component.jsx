@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { ReactComponent as LOGO } from "../../assets/arcana-logo-final_white.svg";
-import Button, {
-  BUTTON_TYPE_CLASS,
-} from "../../components/button/button.component";
+import { BaseButton } from "../../components/button/button.styles";
 import { GrFacebook } from "react-icons/gr";
 
 import {
@@ -23,7 +21,7 @@ const Footer = () => {
             <FooterLogoContainer to="/">
               <LOGO />
             </FooterLogoContainer>
-            <Button buttonType={BUTTON_TYPE_CLASS.base}>Sign Up</Button>
+            <BaseButton>Sign Up</BaseButton>
           </FooterCol>
           <FooterCol>
             <FooterSectionTitle>Company</FooterSectionTitle>

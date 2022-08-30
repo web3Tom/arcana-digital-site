@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { NavigationContext } from "../../contexts/navigation.context";
-import { useMediaQuery } from "react-responsive";
 
 import MobileNavDD from "../../components/mobile-nav-dd/mobile-nav-dd.component";
 
@@ -65,7 +64,7 @@ const MobileNavLinks = () => {
         <MobileIcon
           toggled={isMobileOpen}
           toggle={setMobileOpen}
-          color={scrolled ? `var(--color-primary)` : `white`}
+          iconColor={scrolled ? `var(--color-primary)` : `white`}
           size={30}
           rounded
         />

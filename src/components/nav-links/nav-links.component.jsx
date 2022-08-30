@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 import NavigationDD from "../navigation-dd/navigation-dd.component";
 import { NavigationContext } from "../../contexts/navigation.context";
 
-import Button, {
-  BUTTON_TYPE_CLASS,
-} from "../../components/button/button.component";
+import { GradientButton } from "../../components/button/button.styles";
 
 import {
   NavLinksContainer,
@@ -66,7 +64,7 @@ const NavLinks = () => {
         >
           Login
         </NavALink>
-        <Button buttonType={BUTTON_TYPE_CLASS.gradient} onClick={signupBtn} />
+        <GradientButton onClick={signupBtn} />
       </NavAuthLinksContainer>
     </>
   );

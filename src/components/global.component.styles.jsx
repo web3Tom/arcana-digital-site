@@ -8,8 +8,9 @@ const size = {
   mobileL: "425px",
   tablet: "768px",
   laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
+  laptopL: "1366px",
+  desktop: "1820px",
+  desktopL: "2560px",
 };
 
 export const device = {
@@ -20,6 +21,7 @@ export const device = {
   laptop: `screen and (max-width: ${size.laptop})`,
   laptopL: `screen and (max-width: ${size.laptopL})`,
   desktop: `screen and (max-width: ${size.desktop})`,
+  desktopL: `screen and (max-width: ${size.desktop})`,
 };
 
 // FONT AND HEADLINE STYLES
@@ -215,6 +217,7 @@ export const PLink = styled.p.attrs((scrolled, ...props) => ({
 export const GlobalContentContainer = styled.div`
   display: block;
   width: 100%;
+  height: 100%;
   min-height: 100vh;
   padding-top: 85px;
   margin: 0;

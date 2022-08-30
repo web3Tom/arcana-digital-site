@@ -16,7 +16,11 @@ export const MobileMenu = styled(motion.div)`
   background-color: var(--color-secondary);
 `;
 
-export const MobileIcon = styled(Hamburger)``;
+export const MobileIcon = styled(Hamburger).attrs((props) => ({
+  iconColor: props.iconColor,
+}))`
+  color: ${(props) => props.iconColor};
+`;
 
 export const MobileIconContainer = styled(motion.div)`
   display: flex;

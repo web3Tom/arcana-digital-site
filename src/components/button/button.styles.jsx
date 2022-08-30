@@ -41,8 +41,8 @@ export const BaseButton = styled.button.attrs((props) => ({
     border-color: ${(props) => props.borderColHov};
   }
 
-  @media ${device.laptop} {
-    font-size: 12px;
+  @media ${device.laptopL} {
+    font-size: 22px;
     height: 35px;
   }
 `;
@@ -92,8 +92,8 @@ export const InvertedButton = styled.button.attrs((props) => ({
 `;
 
 export const GradientButton = styled.button.attrs((props) => ({
-  gwidth: props.gwidth || "210px",
-  gheight: props.gheight || "50px",
+  gwidth: props.gwidth || "200px",
+  gheight: props.gheight || "45px",
 }))`
   display: flex;
   position: relative;
@@ -127,7 +127,7 @@ export const GradientButton = styled.button.attrs((props) => ({
     height: 80%;
     text-align: center;
     font-family: var(--font-primary);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     color: #ffffff;
