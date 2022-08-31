@@ -66,7 +66,7 @@ export const DropdownContent = styled.div`
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     width: 135px;
     top: 38px;
   }
@@ -83,7 +83,7 @@ export const DropDownWrapper = styled.div`
     animation-fill-mode: forwards;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     &:hover ${DropdownContent} {
       display: flex;
       animation: ${revealDDxs} 400ms linear 1;

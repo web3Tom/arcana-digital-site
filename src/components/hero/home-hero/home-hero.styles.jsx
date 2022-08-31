@@ -11,8 +11,7 @@ export const HomeHeroContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  min-height: 90vh;
+  height: 90vh;
   padding-top: 60px;
   background-color: transparent;
   z-index: 1;
@@ -35,13 +34,12 @@ export const HeroTitleContainer = styled.div`
 `;
 
 export const HomeHeroH1 = styled(GlobalH1)`
-  font-size: 60px;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  padding: 0;
+  line-height: 1em;
+  padding-bottom: 30px;
   text-align: center;
-  line-height: 1.3em;
 
   b {
     font-weight: inherit;
@@ -49,7 +47,7 @@ export const HomeHeroH1 = styled(GlobalH1)`
     letter-spacing: 4px;
   }
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     font-size: 48px;
   }
 `;
@@ -59,11 +57,11 @@ export const HomeHeroH2 = styled(HomeHeroH1)`
 
   b {
     font-style: normal;
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: var(--color-primary);
   }
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     font-size: 48px;
   }
 `;
@@ -117,7 +115,7 @@ export const HeroSubText = styled(GlobalH2)`
     color: var(--color-primary);
   }
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     font-size: 16px;
   }
 `;
@@ -135,7 +133,7 @@ export const HomeHeroDesc = styled(motion.p)`
   line-height: 1.2em;
   margin: 0;
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     font-size: 26px;
   }
 `;
@@ -156,7 +154,7 @@ export const HomeButton1 = styled(BaseButton)`
   font-weight: 600;
   margin: 0;
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     height: 45px;
     width: 160px;
     font-size: 22px;
@@ -175,7 +173,7 @@ export const HomeGradientButton = styled(GradientButton)`
     width: 92%;
   }
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     height: 45px;
     width: 160px;
     font-size: 18px;

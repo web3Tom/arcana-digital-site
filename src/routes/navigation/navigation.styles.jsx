@@ -26,7 +26,7 @@ export const NavigationContainer = styled(motion.div)`
   height: 100%;
   margin: 0;
 
-  @media ${device.tablet} {
+  @media ${device.tablet768} {
     justify-content: space-between;
   }
 `;
@@ -44,7 +44,7 @@ export const NavLogoContainer = styled(Link)`
     cursor: pointer;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     max-width: 170px;
   }
 `;

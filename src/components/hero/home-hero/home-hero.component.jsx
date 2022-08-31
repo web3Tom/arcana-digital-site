@@ -28,7 +28,7 @@ import { DownArrowAnimation } from "./home-hero-animations";
 import { device, GlobalContentContainer } from "../../global.component.styles";
 
 const HomeHero = () => {
-  const laptopLView = useMediaQuery({ query: device.laptopL });
+  const laptopLView = useMediaQuery({ query: device.laptopL1366 });
 
   return (
     <>
@@ -41,7 +41,7 @@ const HomeHero = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             >
-              Goodbye <b>Complicated</b> CRMs.
+              Ending Complicated CRMs
             </HomeHeroH1>
             <HomeHeroH2
               as={motion.h1}
@@ -49,7 +49,7 @@ const HomeHero = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1, ease: "easeOut" }}
             >
-              Hello <b>Arcana</b>
+              <b>Forever.</b>
             </HomeHeroH2>
           </HeroTitleContainer>
           <HeroSubContainer
@@ -95,9 +95,10 @@ const HomeHero = () => {
           </ArrowContainer>
         </HomeHeroContainer>
         <SoftwareImg
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           src={appscreenshot}
         />
       </GlobalContentContainer>

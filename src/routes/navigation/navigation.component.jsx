@@ -18,7 +18,7 @@ import { device } from "../../components/global.component.styles";
 
 const Navigation = () => {
   const { scrolled } = useContext(NavigationContext);
-  const isMobileView = useMediaQuery({ query: device.laptop });
+  const isMobileView = useMediaQuery({ query: device.laptop1024 });
 
   return (
     <>

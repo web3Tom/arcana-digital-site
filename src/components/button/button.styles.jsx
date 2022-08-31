@@ -41,7 +41,7 @@ export const BaseButton = styled.button.attrs((props) => ({
     border-color: ${(props) => props.borderColHov};
   }
 
-  @media ${device.laptopL} {
+  @media ${device.laptopL1366} {
     font-size: 22px;
     height: 35px;
   }
@@ -85,7 +85,7 @@ export const InvertedButton = styled.button.attrs((props) => ({
     background-color: var(--color-primary);
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     font-size: 12px;
     height: 35px;
   }
@@ -134,7 +134,7 @@ export const GradientButton = styled.button.attrs((props) => ({
     background-color: rgba(19, 20, 22);
     transition: width 0.2s linear, height 0.2s linear;
 
-    @media ${device.laptop} {
+    @media ${device.laptop1024} {
       font-size: 12px;
       height: 35px;
     }

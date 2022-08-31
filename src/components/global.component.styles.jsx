@@ -14,14 +14,14 @@ const size = {
 };
 
 export const device = {
-  mobileS: `screen and (max-width: ${size.mobileS})`,
-  mobileM: `screen and (max-width: ${size.mobileM})`,
-  mobileL: `screen and (max-width: ${size.mobileL})`,
-  tablet: `screen and (max-width: ${size.tablet})`,
-  laptop: `screen and (max-width: ${size.laptop})`,
-  laptopL: `screen and (max-width: ${size.laptopL})`,
-  desktop: `screen and (max-width: ${size.desktop})`,
-  desktopL: `screen and (max-width: ${size.desktop})`,
+  mobileS320: `screen and (max-width: ${size.mobileS})`,
+  mobileM375: `screen and (max-width: ${size.mobileM})`,
+  mobileL425: `screen and (max-width: ${size.mobileL})`,
+  tablet768: `screen and (max-width: ${size.tablet})`,
+  laptop1024: `screen and (max-width: ${size.laptop})`,
+  laptopL1366: `screen and (max-width: ${size.laptopL})`,
+  desktop1820: `screen and (max-width: ${size.desktop})`,
+  desktopL2560: `screen and (max-width: ${size.desktop})`,
 };
 
 // FONT AND HEADLINE STYLES
@@ -45,6 +45,19 @@ export const GlobalH2 = styled.h2.attrs((props) => ({
   size: props.size || "48px",
   weight: props.weight || "700",
   color: props.color || `var(--color-primary)`,
+}))`
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.size};
+  font-weight: ${(props) => props.weight};
+  color: ${(props) => props.color};
+  margin: 0;
+`;
+
+export const GlobalH3 = styled.h3.attrs((props) => ({
+  fontFamily: props.fontFamily || `var(--font-primary)`,
+  size: props.size || "24px",
+  weight: props.weight || "400",
+  color: props.color || `var(--color-grayBlue)`,
 }))`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.size};
@@ -102,7 +115,7 @@ export const RouteLink = styled(Link).attrs((scrolled, ...props) => ({
       }
     `}
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     font-size: 12px;
   }
 `;
@@ -154,7 +167,7 @@ export const ALink = styled.a.attrs((scrolled, ...props) => ({
       }
     `}
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     font-size: 12px;
   }
 `;
@@ -206,7 +219,7 @@ export const PLink = styled.p.attrs((scrolled, ...props) => ({
       }
     `}
 
-  @media ${device.laptop} {
+  @media ${device.laptop1024} {
     font-size: 12px;
   }
 `;
@@ -217,7 +230,7 @@ export const PLink = styled.p.attrs((scrolled, ...props) => ({
 export const GlobalContentContainer = styled.div`
   display: block;
   width: 100%;
-  height: 100%;
+  height:
   min-height: 100vh;
   padding-top: 85px;
   margin: 0;
